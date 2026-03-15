@@ -262,6 +262,7 @@ Key SQL techniques used:
 
 **Tools**
 
+* SQL Server
 * Jupyter Notebook
 * GitHub
 

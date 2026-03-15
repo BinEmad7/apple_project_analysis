@@ -74,41 +74,28 @@ Contains warranty claim information.
 
 
 
-# --- ANALYSIS & EXPORT SCRIPT ---
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
+## 🎯 Business Questions & Objectives
+To demonstrate strategic analysis, this project answers the following:
+1. **Revenue Growth:** What is the sales trend across different quarters?
+2. **Operational Risk:** Which store locations process the highest volume of warranty claims?
+3. **Market Leaders:** Which specific store is driving the most value for the business?
 
-# 1. Final Data Formatting
-data['sale_date'] = pd.to_datetime(data['sale_date'], dayfirst=True)
-data['Revenue'] = data['Price'] * data['quantity']
-data['YearQuarter'] = data['sale_date'].dt.to_period('Q').astype(str)
+## 🖼️ Visual Showcase
+These charts are generated directly from the Python analysis to provide a visual health check of the business.
 
-# 2. Strategic Insight: Revenue Trend
-plt.figure(figsize=(10, 5))
-revenue_trend = data.groupby('YearQuarter')['Revenue'].sum().reset_index()
-sns.lineplot(data=revenue_trend, x='YearQuarter', y='Revenue', marker='o', color='#2ecc71', linewidth=2)
-plt.title('Business Growth: Total Revenue by Quarter', fontsize=14)
-plt.grid(axis='y', linestyle='--', alpha=0.6)
-plt.savefig('revenue_trend.png', dpi=300) # Exporting for GitHub
-plt.show()
+### 1. Sales Trend for New & Existing Products
+![Revenue Trend](revenue_trend.png)
+*Insight: This line chart tracks our quarterly revenue, allowing us to see if the business is scaling or hitting seasonal dips.*
 
-# 3. Operational Insight: Warranty Claims by Store
-plt.figure(figsize=(10, 6))
-claims_only = data.dropna(subset=['claim_id'])
-sns.countplot(data=claims_only, y='Store_Name', palette='magma', order=claims_only['Store_Name'].value_counts().index)
-plt.title('Operational Risk: Warranty Claim Volume by Store', fontsize=14)
-plt.xlabel('Number of Claims')
-plt.tight_layout()
-plt.savefig('warranty_claims.png', dpi=300) # Exporting for GitHub
-plt.show()
+### 2. Warranty Claims by Location
+![Warranty Claims](warranty_claims.png)
+*Insight: By identifying stores with high claim volumes, we can pinpoint potential quality control issues or high-traffic service hubs.*
 
-# 4. Extracting "Executive Summary" numbers
-top_store = data.groupby('Store_Name')['Revenue'].sum().idxmax()
-total_rev = data['Revenue'].sum()
-print(f"--- PORTFOLIO STATS ---")
-print(f"Total Revenue: ${total_rev:,.2f}")
-print(f"Top Store: {top_store}")
+## 📊 Executive Summary (Main Findings)
+Based on the automated analysis of the dataset:
+* **Strategic Growth:** Total revenue reached **[Insert Total Revenue from your print output]**, showing the overall scale of operations.
+* **Top Performer:** The **[Insert Top Store from your print output]** location outperformed all others in total sales volume.
+* **Actionable Intelligence:** Store locations with the highest claims (shown above) should be prioritized for a quality audit to reduce long-term costs.
 
 ## Author
 Ahmed Elsharef

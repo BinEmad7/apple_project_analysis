@@ -152,7 +152,7 @@ These charts are generated from the Python analysis to provide insights into sal
 
 ## 1. Revenue vs Order Volume Trend
 
-![Revenue Trend](revenue_trend.png)
+![Revenue Trend](images/Revenue-vs-Order-Volume-by-Month.png)
 
 **Insight**
 
@@ -170,7 +170,7 @@ Businesses can use this information to **plan inventory and marketing campaigns*
 
 ## 2. Top Products by Revenue
 
-![Top Products Revenue](top_products_revenue.png)
+![Top Products Revenue](images/Top-12-Products-by-Revenue.png)
 
 **Insight**
 
@@ -186,7 +186,7 @@ Findings:
 
 ## 3. Price vs Revenue Relationship
 
-![Price vs Revenue](price_vs_revenue.png)
+![Price vs Revenue](images/Top-12-Products-by-Revenue.png)
 
 **Insight**
 

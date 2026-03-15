@@ -71,5 +71,44 @@ Contains warranty claim information.
 1. Clone the repo: `git clone https://github.com/BinEmad7/apple_project_analysis.git`
 2. Open the SQL file in your preferred database.
 
+
+
+
+# --- ANALYSIS & EXPORT SCRIPT ---
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# 1. Final Data Formatting
+data['sale_date'] = pd.to_datetime(data['sale_date'], dayfirst=True)
+data['Revenue'] = data['Price'] * data['quantity']
+data['YearQuarter'] = data['sale_date'].dt.to_period('Q').astype(str)
+
+# 2. Strategic Insight: Revenue Trend
+plt.figure(figsize=(10, 5))
+revenue_trend = data.groupby('YearQuarter')['Revenue'].sum().reset_index()
+sns.lineplot(data=revenue_trend, x='YearQuarter', y='Revenue', marker='o', color='#2ecc71', linewidth=2)
+plt.title('Business Growth: Total Revenue by Quarter', fontsize=14)
+plt.grid(axis='y', linestyle='--', alpha=0.6)
+plt.savefig('revenue_trend.png', dpi=300) # Exporting for GitHub
+plt.show()
+
+# 3. Operational Insight: Warranty Claims by Store
+plt.figure(figsize=(10, 6))
+claims_only = data.dropna(subset=['claim_id'])
+sns.countplot(data=claims_only, y='Store_Name', palette='magma', order=claims_only['Store_Name'].value_counts().index)
+plt.title('Operational Risk: Warranty Claim Volume by Store', fontsize=14)
+plt.xlabel('Number of Claims')
+plt.tight_layout()
+plt.savefig('warranty_claims.png', dpi=300) # Exporting for GitHub
+plt.show()
+
+# 4. Extracting "Executive Summary" numbers
+top_store = data.groupby('Store_Name')['Revenue'].sum().idxmax()
+total_rev = data['Revenue'].sum()
+print(f"--- PORTFOLIO STATS ---")
+print(f"Total Revenue: ${total_rev:,.2f}")
+print(f"Top Store: {top_store}")
+
 ## Author
 Ahmed Elsharef

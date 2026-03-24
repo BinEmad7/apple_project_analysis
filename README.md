@@ -128,6 +128,22 @@ This project aims to answer important business questions related to **retail per
 
 ---
 
+# Data Processing & Analysis
+
+The dataset was processed and analyzed using **Python (Pandas)**.
+
+Key steps included:
+
+* Merging category, product, sales, store, and warranty tables
+* Creating a **Revenue column (Price × Quantity)**
+* Converting `sale_date` to datetime
+* Creating a **YearQuarter column for time-series analysis**
+* Aggregating revenue and order volume over time
+
+This processed dataset was used for **exploratory analysis and visualization**.
+
+---
+
 # Visual Showcase
 
 These charts are generated from the Python analysis to provide insights into sales performance.
@@ -203,6 +219,28 @@ Some categories dominate both **sales volume and revenue**, suggesting strong cu
 ### Operational Risk
 
 Stores with higher warranty claims may require **further quality analysis or operational review** to reduce long-term service costs.
+
+---
+
+# SQL Analytics Highlights
+
+Advanced SQL queries were used to perform deeper analysis including:
+
+* Store sales performance
+* Year-over-year revenue growth
+* Least selling products by country
+* Warranty claim risk by country
+* Monthly running sales totals
+* Product lifecycle sales performance
+* Relationship between product price and warranty claims
+
+Key SQL techniques used:
+
+* Window functions (`RANK`, `LAG`)
+* Common Table Expressions (CTEs)
+* Aggregation queries
+* Time-based analysis
+* Query optimization using indexes
 
 ---
 

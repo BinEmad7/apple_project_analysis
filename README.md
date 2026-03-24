@@ -222,28 +222,6 @@ Stores with higher warranty claims may require **further quality analysis or ope
 
 ---
 
-# SQL Analytics Highlights
-
-Advanced SQL queries were used to perform deeper analysis including:
-
-* Store sales performance
-* Year-over-year revenue growth
-* Least selling products by country
-* Warranty claim risk by country
-* Monthly running sales totals
-* Product lifecycle sales performance
-* Relationship between product price and warranty claims
-
-Key SQL techniques used:
-
-* Window functions (`RANK`, `LAG`)
-* Common Table Expressions (CTEs)
-* Aggregation queries
-* Time-based analysis
-* Query optimization using indexes
-
----
-
 # Technologies Used
 
 **SQL**

@@ -128,22 +128,6 @@ This project aims to answer important business questions related to **retail per
 
 ---
 
-# Data Processing & Analysis
-
-The dataset was processed and analyzed using **Python (Pandas)**.
-
-Key steps included:
-
-* Merging category, product, sales, store, and warranty tables
-* Creating a **Revenue column (Price × Quantity)**
-* Converting `sale_date` to datetime
-* Creating a **YearQuarter column for time-series analysis**
-* Aggregating revenue and order volume over time
-
-This processed dataset was used for **exploratory analysis and visualization**.
-
----
-
 # Visual Showcase
 
 These charts are generated from the Python analysis to provide insights into sales performance.
